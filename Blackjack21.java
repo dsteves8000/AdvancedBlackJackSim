@@ -783,9 +783,12 @@ public class Blackjack21
          
          if(s == false && t == 1 && p == 20 && d == 2)  {return 1;}
          if(s == false && t == 1 && p == 20 && d == 3)  {return 1;}
-         if(s == false && t == 1 && p == 20 && d == 4)  {return 1;}
-         if(s == false && t == 1 && p == 20 && d == 5)  {return 1;}
-         if(s == false && t == 1 && p == 20 && d == 6)  {return 1;}
+         if(s == false && t == 1 && p == 20 && d == 4)  {return 1;}   
+         if(s == false && t == 1 && p == 20 && d == 5 && truecount >= 5.0)  {System.out.println("D: Split on 5+"); return 3;}
+         if(s == false && t == 1 && p == 20 && d == 5)  {return 1;} //Split on 5+
+         if(s == false && t == 1 && p == 20 && d == 6 && truecount >= 5.0)  {System.out.println("D: Split on 5+"); return 3;}
+         if(s == false && t == 1 && p == 20 && d == 6)  {return 1;} //Split on 5+
+         
          if(s == false && t == 1 && p == 20 && d == 7)  {return 1;}
          if(s == false && t == 1 && p == 20 && d == 8)  {return 1;}
          if(s == false && t == 1 && p == 20 && d == 9)  {return 1;}
@@ -999,12 +1002,14 @@ public class Blackjack21
             if(s == false) {return 0;}
          }
          
-         if(s == false && t == 1 && p == 9 && d == 2)  {return 0;}
+         if(s == false && t == 1 && p == 9 && d == 2 && truecount >= 1.0)  {System.out.println("D: Double on 1+"); return 2;}
+         if(s == false && t == 1 && p == 9 && d == 2)  {return 0;} //Double on 1+
          if(s == false && t == 1 && p == 9 && d == 3)  {return 2;}
          if(s == false && t == 1 && p == 9 && d == 4)  {return 2;}
          if(s == false && t == 1 && p == 9 && d == 5)  {return 2;}
          if(s == false && t == 1 && p == 9 && d == 6)  {return 2;}
-         if(s == false && t == 1 && p == 9 && d == 7)  {return 0;}
+         if(s == false && t == 1 && p == 9 && d == 7 && truecount >= 4.0)  {System.out.println("D: Double on 4+"); return 2;}
+         if(s == false && t == 1 && p == 9 && d == 7)  {return 0;} //Double on 4+
          if(s == false && t == 1 && p == 9 && d == 8)  {return 0;}
          if(s == false && t == 1 && p == 9 && d == 9)  {return 0;}
          if(s == false && t == 1 && p == 9 && d == 10) {return 0;}
@@ -1018,8 +1023,10 @@ public class Blackjack21
          if(s == false && t == 1 && p == 10 && d == 7)  {return 2;}
          if(s == false && t == 1 && p == 10 && d == 8)  {return 2;}
          if(s == false && t == 1 && p == 10 && d == 9)  {return 2;}
-         if(s == false && t == 1 && p == 10 && d == 10) {return 0;}
-         if(s == false && t == 1 && p == 10 && d == 11) {return 0;}
+         if(s == false && t == 1 && p == 10 && d == 10 && truecount >= 4.0)  {System.out.println("D: Double on 4+"); return 2;}
+         if(s == false && t == 1 && p == 10 && d == 10) {return 0;} //Double on 4+
+         if(s == false && t == 1 && p == 10 && d == 11 && truecount >= 4.0)  {System.out.println("D: Double on 4+"); return 2;}
+         if(s == false && t == 1 && p == 10 && d == 11) {return 0;} //Double on 4+
          
          if(s == false && t == 1 && p == 11 && d == 2)  {return 2;}
          if(s == false && t == 1 && p == 11 && d == 3)  {return 2;}
@@ -1030,9 +1037,10 @@ public class Blackjack21
          if(s == false && t == 1 && p == 11 && d == 8)  {return 2;}
          if(s == false && t == 1 && p == 11 && d == 9)  {return 2;}
          if(s == false && t == 1 && p == 11 && d == 10) {return 2;}
-         if(s == false && t == 1 && p == 11 && d == 11) {return 0;}
+         if(s == false && t == 1 && p == 11 && d == 11 && truecount >= 1.0)  {System.out.println("D: Double on 1+"); return 2;}
+         if(s == false && t == 1 && p == 11 && d == 11) {return 0;} //Double on 1+
          
-         if(s == false && p == 9 && d == 2)  {return 0;}
+         if(s == false && p == 9 && d == 2)  {return 0;} 
          if(s == false && p == 9 && d == 3)  {return 0;}
          if(s == false && p == 9 && d == 4)  {return 0;}
          if(s == false && p == 9 && d == 5)  {return 0;}
@@ -1065,30 +1073,70 @@ public class Blackjack21
          if(s == false && p == 11 && d == 10) {return 0;}
          if(s == false && p == 11 && d == 11) {return 0;}
          
-         if(s == false && p == 12 && d == 2)  {return 0;}
-         if(s == false && p == 12 && d == 3)  {return 0;}
-         if(s == false && p == 12 && d == 4)  {return 1;}
-         if(s == false && p == 12 && d == 5)  {return 1;}
-         if(s == false && p == 12 && d == 6)  {return 1;}
+         if(s == false && p == 12 && d == 2 && truecount >= 4.0)  {System.out.println("D: Stand on 4+"); return 1;}
+         if(s == false && p == 12 && d == 2)  {return 0;} //Stand on 4+
+         if(s == false && p == 12 && d == 3 && truecount >= 2.0)  {System.out.println("D: Stand on 2+"); return 1;}
+         if(s == false && p == 12 && d == 3)  {return 0;} //Stand on 2+
+         if(s == false && p == 12 && d == 4 && truecount < 0.0)  {System.out.println("D: Stand on 0+, hit if lower"); return 0;}
+         if(s == false && p == 12 && d == 4)  {return 1;} //Stand on 0+
+         if(s == false && p == 12 && d == 5 && truecount < -1.0)  {System.out.println("D: Stand on -1+. hit if lower"); return 0;}
+         if(s == false && p == 12 && d == 5)  {return 1;} //Stand on -1+, hit if lower
+         if(s == false && p == 12 && d == 6 && truecount < -1.0)  {System.out.println("D: Stand on -1+. hit if lower"); return 0;}
+         if(s == false && p == 12 && d == 6)  {return 1;} //Stand on -1+, hit if lower
          if(s == false && p == 12 && d == 7)  {return 0;}
          if(s == false && p == 12 && d == 8)  {return 0;}
          if(s == false && p == 12 && d == 9)  {return 0;}
          if(s == false && p == 12 && d == 10) {return 0;}
          if(s == false && p == 12 && d == 11) {return 0;}
          
-         if(p == 13 || p == 14 || p == 15 || p == 16)
-         {
-            if(s == false && d == 2)  {return 1;}
-            if(s == false && d == 3)  {return 1;}
-            if(s == false && d == 4)  {return 1;}
-            if(s == false && d == 5)  {return 1;}
-            if(s == false && d == 6)  {return 1;}
-            if(s == false && d == 7)  {return 0;}
-            if(s == false && d == 8)  {return 0;}
-            if(s == false && d == 9)  {return 0;}
-            if(s == false && d == 10) {return 0;}
-            if(s == false && d == 11) {return 0;}
-         }
+         if(s == false && p == 13 && d == 2 && truecount < -1.0)  {System.out.println("D: Stand on -1+. hit if lower"); return 0;}
+         if(s == false && p == 13 && d == 2)  {return 1;} //Stand on -1+, hit if lower
+         if(s == false && p == 13 && d == 3 && truecount < -2.0)  {System.out.println("D: Stand on -2+. hit if lower"); return 0;}
+         if(s == false && p == 13 && d == 3)  {return 1;} //Stand on -2+, hit if lower
+         if(s == false && p == 13 && d == 4)  {return 1;}
+         if(s == false && p == 13 && d == 5)  {return 1;}
+         if(s == false && p == 13 && d == 6)  {return 1;}
+         if(s == false && p == 13 && d == 7)  {return 0;}
+         if(s == false && p == 13 && d == 8)  {return 0;}
+         if(s == false && p == 13 && d == 9)  {return 0;}
+         if(s == false && p == 13 && d == 10) {return 0;}
+         if(s == false && p == 13 && d == 11) {return 0;}
+         
+         if(s == false && p == 14 && d == 2)  {return 1;}
+         if(s == false && p == 14 && d == 3)  {return 1;}
+         if(s == false && p == 14 && d == 4)  {return 1;}
+         if(s == false && p == 14 && d == 5)  {return 1;}
+         if(s == false && p == 14 && d == 6)  {return 1;}
+         if(s == false && p == 14 && d == 7)  {return 0;}
+         if(s == false && p == 14 && d == 8)  {return 0;}
+         if(s == false && p == 14 && d == 9)  {return 0;}
+         if(s == false && p == 14 && d == 10) {return 0;}
+         if(s == false && p == 14 && d == 11) {return 0;}
+         
+         if(s == false && p == 15 && d == 2)  {return 1;}
+         if(s == false && p == 15 && d == 3)  {return 1;}
+         if(s == false && p == 15 && d == 4)  {return 1;}
+         if(s == false && p == 15 && d == 5)  {return 1;}
+         if(s == false && p == 15 && d == 6)  {return 1;}
+         if(s == false && p == 15 && d == 7)  {return 0;}
+         if(s == false && p == 15 && d == 8)  {return 0;}
+         if(s == false && p == 15 && d == 9)  {return 0;}
+         if(s == false && p == 15 && d == 9 && truecount >= 4.0)  {System.out.println("D: Stand on 4+"); return 1;}
+         if(s == false && p == 15 && d == 10) {return 0;} //Stand on 4+
+         if(s == false && p == 15 && d == 11) {return 0;}
+         
+         if(s == false && p == 16 && d == 2)  {return 1;}
+         if(s == false && p == 16 && d == 3)  {return 1;}
+         if(s == false && p == 16 && d == 4)  {return 1;}
+         if(s == false && p == 16 && d == 5)  {return 1;}
+         if(s == false && p == 16 && d == 6)  {return 1;}
+         if(s == false && p == 16 && d == 7)  {return 0;}
+         if(s == false && p == 16 && d == 8)  {return 0;}
+         if(s == false && p == 16 && d == 9 && truecount >= 5.0)  {System.out.println("D: Stand on 5+"); return 1;}
+         if(s == false && p == 16 && d == 9)  {return 0;} //Stand on 5+
+         if(s == false && p == 16 && d == 10 && truecount >= 0.0)  {System.out.println("D: Stand on 0+"); return 1;}
+         if(s == false && p == 16 && d == 10) {return 0;} //Stand on 0+
+         if(s == false && p == 16 && d == 11) {return 0;}
          
          if(p >= 17)
          {
